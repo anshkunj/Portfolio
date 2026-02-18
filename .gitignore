@@ -1,0 +1,27 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Environment files
+.env
+
+# Build / cache (agar future me use ho)
+dist/
+build/
+.cache/
+
+# Node (agar baad me add ho)
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Temporary files
+*.tmp
+*.swp
