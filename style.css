@@ -180,6 +180,7 @@ section h2 {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 1;
   background: linear-gradient(
     to top,
     rgba(2, 6, 23, 0.85),
@@ -194,12 +195,40 @@ section h2 {
   transform: scale(1.08);
 }
 
+/* ===== SHIMMER EFFECT ===== */
+.service-img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  transform: skewX(-20deg);
+}
+
+.service-card:hover .service-img::before {
+  animation: shimmer 0.9s ease forwards;
+}
+
+@keyframes shimmer {
+  0% { left: -120%; }
+  100% { left: 130%; }
+}
+
 /* Overlay text */
 .service-overlay {
   position: absolute;
   bottom: 12px;
   left: 0;
   right: 0;
+  z-index: 3;
   text-align: center;
   opacity: 0;
   transform: translateY(10px);
