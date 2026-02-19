@@ -203,6 +203,24 @@ section h2 {
   color: #22d3ee;
 }
 
+/* ===== CONTACT TITLES ===== */
+.contact-title {
+  margin-top: 45px;
+  margin-bottom: 12px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #38bdf8;
+  letter-spacing: 0.4px;
+  text-shadow: 0 0 12px rgba(56, 189, 248, 0.35);
+}
+
+.contact-sub {
+  text-align: center;
+  color: #94a3b8;
+  margin-bottom: 25px;
+}
+
 /* ===== FOOTER ===== */
 footer {
   text-align: center;
@@ -229,5 +247,13 @@ footer {
   .contact-links a {
     width: 100%;
     justify-content: center;
+  }
+}
+
+/* 👇 YAHAN PASTE KARO */
+@media (min-width: 900px) {
+  .contact-links a {
+    padding: 9px 12px;
+    font-size: 0.95rem;
   }
 }
