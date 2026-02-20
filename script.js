@@ -10,8 +10,8 @@ document.querySelectorAll(".service-card").forEach(card => {
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
 
-    const rotateX = -(y - centerY) / 12;
-    const rotateY = (x - centerX) / 12;
+    const rotateX = -(y - centerY) / 18;
+    const rotateY = (x - centerX) / 18;
 
     card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
   });
