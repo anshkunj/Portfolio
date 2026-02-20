@@ -157,22 +157,19 @@ section h2 {
 .service-card {
   text-align: center;
   min-height: 160px;
-}
-
-/* ===== 3D TILT EFFECT ===== */
-.service-card {
   transform-style: preserve-3d;
-  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  will-change: transform;
 }
 
-/* Smooth transition for image & overlay */
+/* Prevent inner elements from blocking tilt */
 .service-card * {
   pointer-events: none;
 }
 
-/* Optional slight glow on hover */
+/* Premium hover glow */
 .service-card:hover {
-  box-shadow: 0 20px 60px rgba(56, 189, 248, 0.25);
+  box-shadow: 0 25px 70px rgba(56, 189, 248, 0.28);
 }
 
 /* ===== SERVICE IMAGE WRAPPER ===== */
@@ -181,6 +178,7 @@ section h2 {
   border-radius: 14px;
   overflow: hidden;
   margin-bottom: 14px;
+  transform: translateZ(20px);
 }
 
 .service-img img {
@@ -188,10 +186,11 @@ section h2 {
   height: 170px;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s ease;
+  transition: transform 0.45s cubic-bezier(.2,.8,.2,1);
+  backface-visibility: hidden;
 }
 
-/* Premium gradient overlay */
+/* ===== PREMIUM GRADIENT OVERLAY ===== */
 .service-img::after {
   content: "";
   position: absolute;
@@ -200,15 +199,15 @@ section h2 {
   background: linear-gradient(
     to top,
     rgba(2, 6, 23, 0.85),
-    rgba(2, 6, 23, 0.4),
+    rgba(2, 6, 23, 0.45),
     rgba(2, 6, 23, 0.1),
     transparent
   );
 }
 
-/* Hover zoom */
+/* ===== HOVER ZOOM ===== */
 .service-card:hover .service-img img {
-  transform: scale(1.08);
+  transform: scale(1.1);
 }
 
 /* ===== SHIMMER EFFECT ===== */
@@ -216,47 +215,48 @@ section h2 {
   content: "";
   position: absolute;
   top: 0;
-  left: -120%;
+  left: -130%;
   width: 60%;
   height: 100%;
   z-index: 2;
   background: linear-gradient(
     120deg,
     transparent,
-    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.18),
     transparent
   );
   transform: skewX(-20deg);
 }
 
 .service-card:hover .service-img::before {
-  animation: shimmer 0.9s ease forwards;
+  animation: shimmer 0.85s ease forwards;
 }
 
 @keyframes shimmer {
-  0% { left: -120%; }
-  100% { left: 130%; }
+  0% { left: -130%; }
+  100% { left: 140%; }
 }
 
-/* Overlay text */
+/* ===== OVERLAY BUTTON ===== */
 .service-overlay {
   position: absolute;
-  bottom: 12px;
+  bottom: 14px;
   left: 0;
   right: 0;
   z-index: 3;
   text-align: center;
   opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.3s ease;
+  transform: translateY(12px) translateZ(40px);
+  transition: all 0.35s cubic-bezier(.2,.8,.2,1);
 }
 
 .service-overlay span {
   background: rgba(56, 189, 248, 0.15);
-  border: 1px solid rgba(56, 189, 248, 0.5);
-  padding: 6px 14px;
-  border-radius: 20px;
+  border: 1px solid rgba(56, 189, 248, 0.6);
+  padding: 6px 16px;
+  border-radius: 25px;
   font-size: 0.85rem;
+  font-weight: 600;
   color: #38bdf8;
   backdrop-filter: blur(6px);
 }
@@ -264,17 +264,20 @@ section h2 {
 /* Show overlay on hover */
 .service-card:hover .service-overlay {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) translateZ(40px);
 }
 
+/* ===== TEXT STYLING ===== */
 .service-card h3 {
   color: #38bdf8;
   margin-bottom: 10px;
+  transform: translateZ(30px);
 }
 
 .service-card p {
   color: #94a3b8;
   font-size: 0.95rem;
+  transform: translateZ(25px);
 }
 
 /* ===== CONTACT ===== */
