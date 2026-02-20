@@ -20,3 +20,15 @@ document.querySelectorAll(".service-card").forEach(card => {
     card.style.transform = "rotateX(0) rotateY(0)";
   });
 });
+
+/* ===== TOUCH / MOUSE LIGHT EFFECT ===== */
+document.addEventListener("mousemove", e => {
+  document.body.style.setProperty("--x", e.clientX + "px");
+  document.body.style.setProperty("--y", e.clientY + "px");
+});
+
+document.addEventListener("touchmove", e => {
+  const touch = e.touches[0];
+  document.body.style.setProperty("--x", touch.clientX + "px");
+  document.body.style.setProperty("--y", touch.clientY + "px");
+});
