@@ -159,6 +159,22 @@ section h2 {
   min-height: 160px;
 }
 
+/* ===== 3D TILT EFFECT ===== */
+.service-card {
+  transform-style: preserve-3d;
+  transition: transform 0.25s ease;
+}
+
+/* Smooth transition for image & overlay */
+.service-card * {
+  pointer-events: none;
+}
+
+/* Optional slight glow on hover */
+.service-card:hover {
+  box-shadow: 0 20px 60px rgba(56, 189, 248, 0.25);
+}
+
 /* ===== SERVICE IMAGE WRAPPER ===== */
 .service-img {
   position: relative;
